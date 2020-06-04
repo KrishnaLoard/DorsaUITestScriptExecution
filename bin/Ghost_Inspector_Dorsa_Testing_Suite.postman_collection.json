@@ -1,0 +1,5706 @@
+{
+	"info": {
+		"_postman_id": "43b4dc18-0bc8-4828-bc78-625dc3b54368",
+		"name": "Ghost_Inspector Dorsa Testing Suite",
+		"description": "Working for the testing Suit for the Dorsa UI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Run Test Collection",
+			"item": [
+				{
+					"name": "GET DorsaTest Testing Landing Page elements",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2fcabc26d6e038890a9ce9/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2fcabc26d6e038890a9ce9",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TestSuccess Login Dorsa WebApp FireTest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4cea437d-7413-4a34-b856-2e606d77c1d6",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e28a966bf494e1e71341933/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e28a966bf494e1e71341933",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET TestFail Dorsa Webapp Fire Run",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b8adc07a-e90f-46dc-86c5-767945975a2e",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e28b020bf494e1e71349322/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e28b020bf494e1e71349322",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Records Checking on Table Run",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eb37822b-16c7-4d40-aa4e-c5729dadcc1c",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e31034d26d6e03889217734/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e31034d26d6e03889217734",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest MeanSocre Graph Run",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "62fc0c18-5410-4252-92a3-e555912a5636",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a0a5a66fbd91d8bf41377/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a0a5a66fbd91d8bf41377",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Evenscore Graph Run Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ea2879de-a9d5-4b37-bd3b-84675d6c3770",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a0db526d6e03889bfa2a1/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a0db526d6e03889bfa2a1",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Week_All_Check_Charts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e46b65ba86a49794d6b8fde/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e46b65ba86a49794d6b8fde",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c2bd9095a1774539425db/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c2bd9095a1774539425db",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c2f73a86a49794db938ac/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c2f73a86a49794db938ac",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c48e4a86a49794dbafef0/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c48e4a86a49794dbafef0",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c70dfa86a49794dbd96aa/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c70dfa86a49794dbd96aa",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7941a86a49794dbe0deb/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7941a86a49794dbe0deb",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7b0041e57960a8ab0391/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7b0041e57960a8ab0391",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7e48ffea1e62378bbc88/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7e48ffea1e62378bbc88",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Monthly_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c85efffea1e62378be2ab/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c85efffea1e62378be2ab",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c8a56ffea1e62378be9a2/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c8a56ffea1e62378be9a2",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c8e28ffea1e62378bf0a8/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c8e28ffea1e62378bf0a8",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4da8d841e57960a8b5d234/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4da8d841e57960a8b5d234",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4daf6241e57960a8b64049/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4daf6241e57960a8b64049",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dc56441e57960a8b6f776/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dc56441e57960a8b6f776",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dc7daffea1e6237976533/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dc7daffea1e6237976533",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dce6441e57960a8b71837/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dce6441e57960a8b71837",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4de625ffea1e623797c11b/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4de625ffea1e623797c11b",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4e001041e57960a8b7d475/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4e001041e57960a8b7d475",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e5058bd41e57960a8c64496/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e5058bd41e57960a8c64496",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e50614941e57960a8c6955b/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e50614941e57960a8c6955b",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e50630741e57960a8c69a52/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e50630741e57960a8c69a52",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e506596ffea1e6237a6ac7e/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e506596ffea1e6237a6ac7e",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaCheck Graph Weekly Run Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61ff8d59-ec63-458c-a7b9-5477624257ad",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a035626d6e03889beeca1/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a035626d6e03889beeca1",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa TestIndividual Timeouts Run Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "54d5ca4d-9f14-4cde-8915-946c566804e4",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a358066fbd91d8bf6c29c/execute/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a358066fbd91d8bf6c29c",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Last Test Run Results",
+			"item": [
+				{
+					"name": "GET TestFail Dorsa Webapp Last Run",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e28a966bf494e1e71341933/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e28a966bf494e1e71341933",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TestSuccess Login Dorsa Webapp Details Last Run",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e28a966bf494e1e71341933/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e28a966bf494e1e71341933",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Testing Landing Page elements Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2fcabc26d6e038890a9ce9/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2fcabc26d6e038890a9ce9",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Records Checking on Table Get Reults",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e31034d26d6e03889217734/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e31034d26d6e03889217734",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest MeanSocre Graph List Runs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a0a5a66fbd91d8bf41377/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a0a5a66fbd91d8bf41377",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Indivudal Test Monthly TimeOut List Run",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a451526d6e03889c310aa/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a451526d6e03889c310aa",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Individual monthy Timeout Closed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a4fbb26d6e03889c3b631/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a4fbb26d6e03889c3b631",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Individual Weekly Timeout Closed List Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a48e166fbd91d8bf7ffe9/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a48e166fbd91d8bf7ffe9",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score TimeOut closed Weekly Result List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a48e166fbd91d8bf7ffe9/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a48e166fbd91d8bf7ffe9",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score TimeOut closed Monthly List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a48e166fbd91d8bf7ffe9/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a48e166fbd91d8bf7ffe9",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score Briefing closed Monthly List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2e111766fbd91d8b27b49e/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2e111766fbd91d8b27b49e",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score Briefing Weekly List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2e0be466fbd91d8b2772c0/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2e0be466fbd91d8b2772c0",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score All Weekly List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2debde66fbd91d8b263961/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2debde66fbd91d8b263961",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score All Monthly List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2decf226d6e03889f09b2a/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2decf226d6e03889f09b2a",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Evenscore Graph List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a0db526d6e03889bfa2a1/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a0db526d6e03889bfa2a1",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaCheck Individual Timeouts Week List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a3f0466fbd91d8bf73337/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a3f0466fbd91d8bf73337",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaCheck Graph Yearly List Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a00b366fbd91d8bf35368/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a00b366fbd91d8bf35368",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaCheck Graph Weekly List Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a035626d6e03889beeca1/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a035626d6e03889beeca1",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa TestIndividual Timeouts List Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a358066fbd91d8bf6c29c/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a358066fbd91d8bf6c29c",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c2bd9095a1774539425db/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c2bd9095a1774539425db",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Test Status\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.code).to.eql(\"SUCCESS\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Your test name \" + jsonData.data.test.name, function () {",
+									"    pm.expect(typeof jsonData.data.test.name).to.eql(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Steps Count \" + jsonData.data.steps.length, function () {",
+									"    pm.expect(jsonData.data.steps.length > 0).to.eql(true);",
+									"});",
+									"",
+									"for(var i=0;i<jsonData.data.steps.length;i++){",
+									"    if(jsonData.data.steps[i].passing==false){",
+									"    ",
+									"    pm.test(\"Steps Fail \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });     ",
+									"       ",
+									"    pm.test(\"Steps Fail Error \"+jsonData.data.steps[i].error, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"    ",
+									"    pm.test(\"Steps Fail Errored Command \"+jsonData.data.steps[i].command, function () {",
+									"        pm.expect(jsonData.data.steps[i].error).to.eql(\"\");",
+									"    }); ",
+									"        ",
+									"    }else{",
+									"        ",
+									"    pm.test(\"Steps Pass Check \"+i, function () {",
+									"        pm.expect(jsonData.data.steps[i].passing).to.eql(true);",
+									"    });        ",
+									"        ",
+									"    }",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c2f73a86a49794db938ac/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c2f73a86a49794db938ac",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c48e4a86a49794dbafef0/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c48e4a86a49794dbafef0",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c70dfa86a49794dbd96aa/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c70dfa86a49794dbd96aa",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7941a86a49794dbe0deb/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7941a86a49794dbe0deb",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7b0041e57960a8ab0391/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7b0041e57960a8ab0391",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7e48ffea1e62378bbc88/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7e48ffea1e62378bbc88",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Monthly_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c85efffea1e62378be2ab/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c85efffea1e62378be2ab",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c8a56ffea1e62378be9a2/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c8a56ffea1e62378be9a2",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c8e28ffea1e62378bf0a8/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c8e28ffea1e62378bf0a8",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4da8d841e57960a8b5d234/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4da8d841e57960a8b5d234",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4daf6241e57960a8b64049/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4daf6241e57960a8b64049",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dc56441e57960a8b6f776/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dc56441e57960a8b6f776",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dc7daffea1e6237976533/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dc7daffea1e6237976533",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dce6441e57960a8b71837/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dce6441e57960a8b71837",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4de625ffea1e623797c11b/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4de625ffea1e623797c11b",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4e001041e57960a8b7d475/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4e001041e57960a8b7d475",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e5058bd41e57960a8c64496/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e5058bd41e57960a8c64496",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e50614941e57960a8c6955b/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e50614941e57960a8c6955b",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e50630741e57960a8c69a52/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e50630741e57960a8c69a52",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e506596ffea1e6237a6ac7e/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e506596ffea1e6237a6ac7e",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get Test Details",
+			"item": [
+				{
+					"name": "GET TestFail Dorsa Webapp List Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e28b020bf494e1e71349322/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e28b020bf494e1e71349322",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TestSuccess Login Dorsa WebApp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e28a966bf494e1e71341933/results/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e28a966bf494e1e71341933",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET orsaTest Testing Landing Page elements Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2fcabc26d6e038890a9ce9/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2fcabc26d6e038890a9ce9",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Records Checking on Table Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e31034d26d6e03889217734/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e31034d26d6e03889217734",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest MeanSocre Graph Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a0a5a66fbd91d8bf41377/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a0a5a66fbd91d8bf41377",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Indivudal Test Monthly TimeOut Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a451526d6e03889c310aa/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a451526d6e03889c310aa",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Individual monthy Timeout Closed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a4fbb26d6e03889c3b631/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a4fbb26d6e03889c3b631",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Individual Weekly Timeout Closed Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a48e166fbd91d8bf7ffe9/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a48e166fbd91d8bf7ffe9",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score TimeOut closed Weekly Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2df12026d6e03889f0e431/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2df12026d6e03889f0e431",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score TimeOut closed Monthly Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2df60866fbd91d8b268f9e/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2df60866fbd91d8b268f9e",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score Briefing closed Monthly Test details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2e111766fbd91d8b27b49e/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2e111766fbd91d8b27b49e",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score Briefing Weekly Test details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2e0be466fbd91d8b2772c0/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2e0be466fbd91d8b2772c0",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score All Weekly details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2debde66fbd91d8b263961/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2debde66fbd91d8b263961",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Event Score All Monthly details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2decf226d6e03889f09b2a/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2decf226d6e03889f09b2a",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaTest Evenscore Graph details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a0db526d6e03889bfa2a1/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a0db526d6e03889bfa2a1",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaCheck Individual Timeouts Week Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a3f0466fbd91d8bf73337/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a3f0466fbd91d8bf73337",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaCheck Graph Yearly",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a00b366fbd91d8bf35368/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a00b366fbd91d8bf35368",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET DorsaCheck Graph Weekly Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a035626d6e03889beeca1/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a035626d6e03889beeca1",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa TestIndividual Timeouts Test Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e2a358066fbd91d8bf6c29c/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e2a358066fbd91d8bf6c29c",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						},
+						"description": "Getting the list of the last run"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c2bd9095a1774539425db/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c2bd9095a1774539425db",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c2f73a86a49794db938ac/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c2f73a86a49794db938ac",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c48e4a86a49794dbafef0/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c48e4a86a49794dbafef0",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c70dfa86a49794dbd96aa/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c70dfa86a49794dbd96aa",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7941a86a49794dbe0deb/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7941a86a49794dbe0deb",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7b0041e57960a8ab0391/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7b0041e57960a8ab0391",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Weekly_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c7e48ffea1e62378bbc88/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c7e48ffea1e62378bbc88",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Dorsa_Test_AllCharts_Monthly_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c85efffea1e62378be2ab/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c85efffea1e62378be2ab",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c8a56ffea1e62378be9a2/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c8a56ffea1e62378be9a2",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4c8e28ffea1e62378bf0a8/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4c8e28ffea1e62378bf0a8",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4da8d841e57960a8b5d234/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4da8d841e57960a8b5d234",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4daf6241e57960a8b64049/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4daf6241e57960a8b64049",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dc56441e57960a8b6f776/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dc56441e57960a8b6f776",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Monthly_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dc7daffea1e6237976533/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dc7daffea1e6237976533",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4dce6441e57960a8b71837/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4dce6441e57960a8b71837",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4de625ffea1e623797c11b/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4de625ffea1e623797c11b",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e4e001041e57960a8b7d475/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e4e001041e57960a8b7d475",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e5058bd41e57960a8c64496/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e5058bd41e57960a8c64496",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e50614941e57960a8c6955b/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e50614941e57960a8c6955b",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e50630741e57960a8c69a52/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e50630741e57960a8c69a52",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dorsa_Test_AllCharts_Year_Room6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9e3272ef-1847-4ef0-a90f-2773b1387dbf",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.test(\"Status Code 200 Check\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5e506596ffea1e6237a6ac7e/?apiKey={{api_key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5e506596ffea1e6237a6ac7e",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{api_key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

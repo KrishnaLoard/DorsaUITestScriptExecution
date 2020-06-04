@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+<style>
+table { width: 100% }
+th { font:bold 10pt Tahoma; }
+td { font:normal 10pt Tahoma; }
+h1 {font:normal 11pt Tahoma;}
+</style>
+</head>
+<body>
+<h1>Wed Jun 03 21:52:37 EDT 2020</h1>
+<table border="0" cellpadding="5" cellspacing="3">
+<tr align="left">
+	<th style="width:10%">Loglevel</th>
+	<th style="width:15%">Time</th>
+	<th style="width:75%">Log Message</th>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 21:52</td>
+	<td>Starting the Script Execution</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 21:52</td>
+	<td>Creating Process Builder</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 21:52</td>
+	<td>Deleting Previous recordGHOSTINSPECTOR_ALGOMA_UNIVERSITY-2020-06-04-01-46-19-569-0.html</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 21:52</td>
+	<td>Deleting Previous recordnewman-run-report-2020-06-04-01-46-19-570-0.html</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 21:52</td>
+	<td>Processbuiler Created</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 21:52</td>
+	<td>Running The Scripts</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 22:01</td>
+	<td>Script executed</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 22:01</td>
+	<td>1 email                                                                                                                                                                                                                                                                                                                                                                                                            {kishan.bheemajiyani@gmail.com}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 22:01</td>
+	<td>2 email                                                                                                                                                                                                                                                                                                                                                                                                            {kbheemajiyani@algomau.ca}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 22:01</td>
+	<td>3 email                                                                                                                                                                                                                                                                                                                                                                                                            kbheemajiyani@algomau.ca                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 22:01</td>
+	<td>Number of emails 3</td>
+</tr>
+<tr>
+	<td>INFO</td>
+	<td>Jun 03,2020 22:01</td>
+	<td>{kishan.bheemajiyani@gmail.com},{kbheemajiyani@algomau.ca},kbheemajiyani@algomau.ca</td>
+</tr>
+</table>
+</body>
+</html>

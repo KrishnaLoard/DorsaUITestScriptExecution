@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "f60e21c5-3dac-4bf5-b36d-87d43bb259f6",
+		"name": "GHOSTINSPECTOR_ALGOMA_UNIVERSITY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "INDIVIDUAL_REQUESTS",
+			"item": [
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_ON_PAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9bb/execute/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9bb",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_ELEMENT_STUDENT_APPLICATION_FORM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed82dee8b1fc67cee37840a/execute/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed82dee8b1fc67cee37840a",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_ON_PAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9bb/execute/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9bb",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_COVID19LINK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9fb/execute/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9fb",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "INDIVIDUAL_LIST_RESULTS",
+			"item": [
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_ON_PAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9bb/results/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9bb",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_ELEMENT_STUDENT_APPLICATION_FORM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed82dee8b1fc67cee37840a/results/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed82dee8b1fc67cee37840a",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_ON_PAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9bb/results/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9bb",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_COVID19LINK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9fb/results/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9fb",
+								"results",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "INDIVIDUAL_DETAILS_CASES",
+			"item": [
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_ON_PAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9bb/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9bb",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_ELEMENT_STUDENT_APPLICATION_FORM",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed82dee8b1fc67cee37840a/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed82dee8b1fc67cee37840a",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_ON_PAGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9bb/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9bb",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TEST_CHECKING_ELEMENTS_COVID19LINK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/tests/5ed80fd78b1fc67cee35e9fb/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"tests",
+								"5ed80fd78b1fc67cee35e9fb",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TOTAL_SUITE_OPERATION",
+			"item": [
+				{
+					"name": "GET RUN_TOTAL_SUITE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.ghostinspector.com/v1/suites/5ed80fd7b27966595bb56843/execute/?apiKey={{apikey}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"ghostinspector",
+								"com"
+							],
+							"path": [
+								"v1",
+								"suites",
+								"5ed80fd7b27966595bb56843",
+								"execute",
+								""
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

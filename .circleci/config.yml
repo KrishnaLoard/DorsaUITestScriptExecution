@@ -1,0 +1,11 @@
+version: 2.1
+orbs:
+  ghostinspector: ghostinspector/test-runner@1.0.0
+jobs:
+  build:
+    executor: default
+    steps:
+      - ghostinspector/execute-suite:
+          id: $GI_SUITE
+          extra-params: '{"myVar": "foo", "otherVar": "bar"}'
+          wait: true
