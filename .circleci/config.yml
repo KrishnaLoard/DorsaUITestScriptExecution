@@ -7,5 +7,5 @@ jobs:
     steps:
       - ghostinspector/execute-suite:
           id: $GI_SUITE
-          extra-params: '{"myVar": "foo", "otherVar": "Test"}'
+          extra-params: '{"myVar": "foo", "otherVar": "Test34"}'
           wait: true
